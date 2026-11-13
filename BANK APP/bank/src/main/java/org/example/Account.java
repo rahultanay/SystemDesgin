@@ -48,7 +48,7 @@ package org.example;
                 this.pin = pin;
             }
             else{
-                System.out.println("IllegalArgumentException - only 4 digit number");
+                throw new IllegalArgumentException("Only 4 digit pin allowed");
             }
 
         }
@@ -76,7 +76,7 @@ package org.example;
             if(!status.equals("ACTIVE")){
                 checker = false;
             }
-            if (!(amount > 0) || amount <= balance){
+            if (!(amount > 0) || amount >= balance){
                 checker = false;
             }
 
@@ -84,7 +84,7 @@ package org.example;
                 balance = balance - amount;
                 return true;
             } else {
-                System.out.println("Transaction failed");
+                System.out.println("Transaction failed in withdrwal fucntion");
                 return false;
             }
 
